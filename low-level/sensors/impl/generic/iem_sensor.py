@@ -32,9 +32,8 @@ from functools import lru_cache
 
 from framework.base.module_thread import SensorThread
 from framework.base.internal_msgQ import InternalMsgQ
-from framework.base.sspl_constants import iem_severity_types, iem_source_types, iem_severity_to_alert_mapping, COMMON_CONFIGS
+from framework.base.sspl_constants import iem_severity_types, iem_source_types, iem_severity_to_alert_mapping, COMMON_CONFIGS, PRODUCT_FAMILY
 from framework.utils.service_logging import logger
-from framework.base.sspl_constants import PRODUCT_FAMILY
 
 from json_msgs.messages.sensors.iem_data import IEMDataMsg
 from rabbitmq.rabbitmq_egress_processor import RabbitMQegressProcessor

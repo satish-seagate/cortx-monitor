@@ -22,12 +22,8 @@ Module which provides common config information using Provisioner API
 import ast
 import errno
 
-try:
-    from service_logging import logger
-    from utility import Utility
-except Exception as err:
-    from framework.utils.service_logging import logger
-    from framework.utils.utility import Utility
+from framework.utils.service_logging import logger
+from framework.utils.utility import Utility
 
 
 class SaltInterface:

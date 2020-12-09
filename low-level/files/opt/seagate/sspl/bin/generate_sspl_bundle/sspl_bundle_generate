@@ -177,7 +177,7 @@ class SSPLBundleGenerate(object):
 
     def get_consul_data(self):
         self.consul_folder_name = f"consul_sspl_data-{str(int(time.time()))}"
-        consuldump = f"/opt/seagate/{PRODUCT_FAMILY}/sspl/bin/consuldump.py -n {self.consul_folder_name} -l /tmp/{sspl_bundle_tmp}/ -d"
+        consuldump = f"/opt/seagate/{PRODUCT_FAMILY}/sspl/low-level/files/opt/seagate/sspl/bin/consuldump.py -n {self.consul_folder_name} -l /tmp/{sspl_bundle_tmp}/ -d"
         consuldump_cmd = {
             "sspl_config": f"{consuldump} consul_sspl_config sspl/",
             "sspl_cache": f"{consuldump} consul_sspl_cache var/{PRODUCT_FAMILY}/sspl",

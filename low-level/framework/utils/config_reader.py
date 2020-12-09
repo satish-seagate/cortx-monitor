@@ -1,3 +1,5 @@
+#!/usr/bin/python3.6
+
 # Copyright (c) 2001-2020 Seagate Technology LLC and/or its Affiliates
 #
 # This program is free software: you can redistribute it and/or modify it under the
@@ -26,17 +28,13 @@ import configparser
 import time
 import requests
 
-try:
-    import salt.client
-    from sspl_constants import component, file_store_config_path, salt_provisioner_pillar_sls, \
-         file_store_config_path, SSPL_STORE_TYPE, StoreTypes, salt_uniq_passwd_per_node, COMMON_CONFIGS, \
-         CONSUL_HOST, CONSUL_PORT, SSPL_CONFIGS, MAX_CONSUL_RETRY, WAIT_BEFORE_RETRY
-except Exception as e:
-    from framework.base.sspl_constants import component, salt_provisioner_pillar_sls, \
-         SSPL_STORE_TYPE, StoreTypes, salt_uniq_passwd_per_node, COMMON_CONFIGS, SSPL_CONFIGS, \
-         MAX_CONSUL_RETRY, WAIT_BEFORE_RETRY
-    from framework.utils.consulstore import ConsulStore
-    from framework.utils.filestore import FileStore
+import salt.client
+from framework.base.sspl_constants import component, salt_provisioner_pillar_sls, \
+        file_store_config_path, SSPL_STORE_TYPE, StoreTypes, salt_uniq_passwd_per_node, COMMON_CONFIGS, \
+        CONSUL_HOST, CONSUL_PORT, SSPL_CONFIGS, MAX_CONSUL_RETRY, WAIT_BEFORE_RETRY
+from framework.utils.consulstore import ConsulStore
+from framework.utils.filestore import FileStore
+    
 
 
 class ConfigReader(object):

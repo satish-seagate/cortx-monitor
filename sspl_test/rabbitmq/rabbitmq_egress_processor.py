@@ -1,3 +1,5 @@
+#!/usr/bin/python3.6
+
 # Copyright (c) 2001-2020 Seagate Technology LLC and/or its Affiliates
 #
 # This program is free software: you can redistribute it and/or modify it under the
@@ -296,10 +298,9 @@ class RabbitMQegressProcessor(ScheduledModuleThread, InternalMsgQ):
                 message = self._jsonMsg.get("message")
                 if message.get("actuator_request_type") or \
                     message.get("sensor_request_type") is not None:
-                    logger.error("inside egress, test actuator")
+                    logger.info("inside egress, test actuator")
                     unique_routing_key = f'{self._routing_key}_node{self._node_id}'
                     logger.info(f"Connecting using routing key: {unique_routing_key}")
-                    logger.error(f"Connecting using routing key: {unique_routing_key}")
                     self._add_signature()
                     jsonMsg = json.dumps(self._jsonMsg).encode('utf8')
                     self._connection.publish(exchange=self._exchange_name,

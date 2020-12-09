@@ -17,14 +17,12 @@
 
 import subprocess
 import ast
+import sys
 from enum import Enum
-
-try:
-    from salt_util import node_id, consulhost, consulport
-    from service_logging import logger
-except Exception as e:
-    from framework.utils.salt_util import node_id, consulhost, consulport
-    from framework.utils.service_logging import logger
+# Add the top level directories
+sys.path.insert(0, f'/opt/seagate/cortx/sspl/low-level')
+from framework.utils.salt_util import node_id, consulhost, consulport
+from framework.utils.service_logging import logger
 
 PRODUCT_NAME = 'LDR_R1'
 PRODUCT_FAMILY = 'cortx'
@@ -32,8 +30,8 @@ enabled_products = ["CS-A", "SINGLE","DUAL", "CLUSTER", "LDR_R1", "LDR_R2"]
 cs_products = ["CS-A"]
 cs_legacy_products = ["CS-L", "CS-G"]
 setups = ["cortx"]
-RESOURCE_PATH = f"/opt/seagate/{PRODUCT_FAMILY}/sspl/resources/"
-CLI_RESOURCE_PATH = f"/opt/seagate/{PRODUCT_FAMILY}/sspl/cli"
+RESOURCE_PATH = f"/opt/seagate/{PRODUCT_FAMILY}/sspl/low-level/json_msgs/schemas"
+CLI_RESOURCE_PATH = f"/opt/seagate/{PRODUCT_FAMILY}/sspl/low-level/tests/manual"
 DATA_PATH = f"/var/{PRODUCT_FAMILY}/sspl/data/"
 NODE_ID = "001"
 SITE_ID = "001"

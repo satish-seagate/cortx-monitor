@@ -1,3 +1,5 @@
+#!/usr/bin/python3.6
+
 # Copyright (c) 2020 Seagate Technology LLC and/or its Affiliates
 #
 # This program is free software: you can redistribute it and/or modify it under the
